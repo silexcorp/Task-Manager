@@ -1,0 +1,265 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task.source.ui"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Task.source.ui.Iconos"
+        mc:Ignorable="d"
+        Title="Iconos" Height="400" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" Icon="/source/ico/logo.png" ShowInTaskbar="False" Topmost="True" AllowsTransparency="True" WindowStyle="None" BorderThickness="0" Background="#FF1A1A1D" Opacity="0.98" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+
+        <Grid HorizontalAlignment="Right" Height="30" Margin="0,10,10,0" VerticalAlignment="Top" Width="30">
+            <Rectangle Fill="#FFF4F4F5" Margin="13,4" Stroke="Black" RadiusX="1" RadiusY="1" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="#FFF4F4F5" Margin="13,4" Stroke="Black" RadiusX="1" RadiusY="1" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <ed:Arc ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" MouseLeftButtonDown="Arc_MouseLeftButtonDown_1"/>
+
+        </Grid>
+
+        <Grid Height="60" Margin="38.667,42.333,0,0" VerticalAlignment="Top" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/1.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseLeave="ico__MouseLeave" MouseEnter="ico__MouseEnter" MouseLeftButtonDown="ico__MouseLeftButtonDown"/>
+
+        </Grid>
+
+        <Grid Height="60" Margin="103.667,42.333,0,0" VerticalAlignment="Top" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/2.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_1" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_1_MouseEnter" MouseLeave="ico_1_MouseLeave" MouseLeftButtonDown="ico_1_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="168.667,42.333,171.333,0" VerticalAlignment="Top">
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/3.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_2" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_2_MouseEnter" MouseLeave="ico_2_MouseLeave" MouseLeftButtonDown="ico_2_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="0,42.333,106.333,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/4.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_3" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_3_MouseEnter" MouseLeave="ico_3_MouseLeave" MouseLeftButtonDown="ico_3_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="0,42.333,41.333,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock4" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/5.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_4" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_4_MouseEnter" MouseLeave="ico_4_MouseLeave" MouseLeftButtonDown="ico_4_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="38.667,107.333,0,0" VerticalAlignment="Top" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock5" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/6.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_5" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_5_MouseEnter" MouseLeave="ico_5_MouseLeave" MouseLeftButtonDown="ico_5_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="103.667,107.333,0,0" VerticalAlignment="Top" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/7.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_6" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_6_MouseEnter" MouseLeave="ico_6_MouseLeave" MouseLeftButtonDown="ico_6_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="168.667,107.333,171.333,0" VerticalAlignment="Top">
+            <TextBlock x:Name="textBlock7" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/8.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_7" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_7_MouseEnter" MouseLeave="ico_7_MouseLeave" MouseLeftButtonDown="ico_7_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="0,107.333,106.333,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock8" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/9.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_8" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_8_MouseEnter" MouseLeave="ico_8_MouseLeave" MouseLeftButtonDown="ico_8_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Height="60" Margin="0,107.333,41.333,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock9" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/10.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_9" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_9_MouseEnter" MouseLeave="ico_9_MouseLeave" MouseLeftButtonDown="ico_9_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="38.667,172.333,0,167.667" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock10" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/11.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_10" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_10_MouseEnter" MouseLeave="ico_10_MouseLeave" MouseLeftButtonDown="ico_10_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="103.667,172.333,0,167.667" Width="60" HorizontalAlignment="Left">
+            <TextBlock x:Name="textBlock11" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/12.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_11" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_11_MouseEnter" MouseLeave="ico_11_MouseLeave" MouseLeftButtonDown="ico_11_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="168.667,172.333,171.333,167.667">
+            <TextBlock x:Name="textBlock12" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/13.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_12" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_12_MouseEnter" MouseLeave="ico_12_MouseLeave" MouseLeftButtonDown="ico_12_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,172.333,106.333,167.667" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock13" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/14.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_13" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_13_MouseEnter" MouseLeave="ico_13_MouseLeave" MouseLeftButtonDown="ico_13_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,172.333,41.333,167.667" HorizontalAlignment="Right" Width="60">
+            <TextBlock x:Name="textBlock14" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/15.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_14" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_14_MouseEnter" MouseLeave="ico_14_MouseLeave" MouseLeftButtonDown="ico_14_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="38.667,0,0,102.667" Width="60" HorizontalAlignment="Left" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock15" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/16.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_15" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_15_MouseEnter" MouseLeave="ico_15_MouseLeave" MouseLeftButtonDown="ico_15_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="103.667,0,0,102.667" Width="60" HorizontalAlignment="Left" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock16" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/17.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_16" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_16_MouseEnter" MouseLeave="ico_16_MouseLeave" MouseLeftButtonDown="ico_16_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="168.667,0,171.333,102.667" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock17" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/18.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_17" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_17_MouseEnter" MouseLeave="ico_17_MouseLeave" MouseLeftButtonDown="ico_17_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,0,106.333,102.667" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock18" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/19.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_18" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_18_MouseEnter" MouseLeave="ico_18_MouseLeave" MouseLeftButtonDown="ico_18_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,0,41.333,102.667" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock19" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/20.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_19" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_19_MouseEnter" MouseLeave="ico_19_MouseLeave" MouseLeftButtonDown="ico_19_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="38.667,0,0,37.667" Width="60" HorizontalAlignment="Left" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock20" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/21.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_20" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_20_MouseEnter" MouseLeave="ico_20_MouseLeave" MouseLeftButtonDown="ico_20_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="103.667,0,0,37.667" Width="60" HorizontalAlignment="Left" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock21" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/22.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_21" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_21_MouseEnter" MouseLeave="ico_21_MouseLeave" MouseLeftButtonDown="ico_21_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="168.667,0,171.333,37.667" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock22" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/23.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_22" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_22_MouseEnter" MouseLeave="ico_22_MouseLeave" MouseLeftButtonDown="ico_22_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,0,106.333,37.667" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock23" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/24.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_23" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_23_MouseEnter" MouseLeave="ico_23_MouseLeave" MouseLeftButtonDown="ico_23_MouseLeftButtonDown"/>
+
+        </Grid>
+        <Grid Margin="0,0,41.333,37.667" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Bottom">
+            <TextBlock x:Name="textBlock24" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Width="50" Height="50" VerticalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="../img/25.png"/>
+                </TextBlock.Background>
+            </TextBlock>
+            <ed:Arc x:Name="ico_24" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" HorizontalAlignment="Center" Margin="0" Width="60" Height="60" VerticalAlignment="Center" MouseEnter="ico_24_MouseEnter" MouseLeave="ico_24_MouseLeave" MouseLeftButtonDown="ico_24_MouseLeftButtonDown"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

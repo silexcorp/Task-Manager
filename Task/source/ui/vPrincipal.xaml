@@ -1,0 +1,290 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task.source.ui"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="Task.source.ui.vPrincipal"
+        mc:Ignorable="d"
+
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Title="Add Task" Height="406" Width="945" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Opacity="0.98" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" Icon="../ico/logo.png">
+
+    <Window.Resources>
+
+        <ControlTemplate TargetType="{x:Type TextBoxBase}" x:Key="txt">
+            <Border Padding="3" CornerRadius="18" BorderThickness="0" BorderBrush="Black" x:Name="border_input" Background="{TemplateBinding Panel.Background}">
+                <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled">
+                    <Trigger.Value>
+                        <System:Boolean>False</System:Boolean>
+                    </Trigger.Value>
+                    <Setter Property="Panel.Background" TargetName="border_input" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                    <Setter Property="TextElement.Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="CustomCellCenter" TargetType="{x:Type DataGridCell}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}" >
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#d6d6d6"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid x:Name="principal" Height="400" Margin="316,3,320,3" Background="#FF1A1A1D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Right" Height="30" Margin="0,10,10,0" VerticalAlignment="Top" Width="30">
+            <Rectangle Fill="#FFF4F4F5" Margin="13,4" Stroke="Black" RadiusX="1" RadiusY="1" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Fill="#FFF4F4F5" Margin="13,4" Stroke="Black" RadiusX="1" RadiusY="1" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <ed:Arc ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.2" MouseLeftButtonDown="Arc_MouseLeftButtonDown_1"/>
+
+        </Grid>
+        <Label x:Name="label" Content="" Margin="100,10,100,0" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Opacity="0.7">
+            <Label.Background>
+                <ImageBrush ImageSource="/source/ico/logo.png" Stretch="Uniform"/>
+            </Label.Background>
+        </Label>
+        <ComboBox x:Name="a_hora" Width="44" Margin="18,0,0,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Text="Hora" SelectedIndex="0">
+
+        </ComboBox>
+        <ComboBox x:Name="a_minuto" Width="44" Margin="61,0,0,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" SelectedIndex="0">
+
+        </ComboBox>
+        <ComboBox x:Name="b_hora" Width="44" Margin="0,0,110,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="Hora" SelectedIndex="0">
+
+        </ComboBox>
+        <ComboBox x:Name="b_minuto" Width="48" Margin="0,0,63,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Text="Minuto" SelectedIndex="0">
+
+        </ComboBox>
+        <DatePicker x:Name="date" Height="25" Margin="18,153,141,0" VerticalAlignment="Top" IsTodayHighlighted="True" Background="#FF131315" SelectedDateFormat="Short"  DisplayDate="2017-09-12"/>
+        <TextBox x:Name="tarea" Height="24" Margin="18,0,91,81" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Verdana" FontSize="16" Background="#FFB3B3B2"/>
+        <Label x:Name="label2" Content="Date" HorizontalAlignment="Left" Height="31.5" Margin="17.5,125,0,0" VerticalAlignment="Top" Width="77.5" Foreground="Gainsboro" FontWeight="Bold" FontSize="16" FontFamily="Verdana"/>
+        <Label x:Name="label2_Copy" Content="Hour" HorizontalAlignment="Left" Margin="17.5,181,0,188" Width="77.5" Foreground="Gainsboro" FontWeight="Bold" FontSize="16" FontFamily="Verdana"/>
+        <Label x:Name="label2_Copy1" Content="Start" HorizontalAlignment="Left" Margin="49,0,0,166" Width="49" Foreground="#FFACA4A4" FontSize="16" Height="29" VerticalAlignment="Bottom" FontFamily="Verdana"/>
+        <Label x:Name="label2_Copy2" Content="Finish" HorizontalAlignment="Right" Margin="0,0,67.341,166" Width="55" Foreground="#FFACA4A4" FontSize="16" Height="29" VerticalAlignment="Bottom" FontFamily="Verdana"/>
+        <Label x:Name="label2_Copy3" Content="Activity" HorizontalAlignment="Left" Margin="18,0,0,105" Width="78" Foreground="Gainsboro" FontWeight="Bold" FontSize="16" Height="32" VerticalAlignment="Bottom"/>
+        <Label x:Name="label2_Copy4" Content="SILEXCORP" Margin="103,90,106,0" Foreground="#FFB2ADAD" FontSize="18" Height="30" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Right" Height="35" Margin="0,148,40.5,0" VerticalAlignment="Top" Width="30">
+            <ed:Arc x:Name="btn_add_img_" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Stroke="Black" Opacity="0.92" MouseLeftButtonDown="Arc_MouseLeftButtonDown" HorizontalAlignment="Left" Width="30" Margin="0,5,0,0">
+                <ed:Arc.Fill>
+                    <SolidColorBrush Color="#FFB2B2B3" Opacity="0.1"/>
+                </ed:Arc.Fill>
+            </ed:Arc>
+            <Label x:Name="ico_btn" Content="♥" Margin="1,6,1,1" FontSize="24" Foreground="{x:Null}">
+                <Label.Background>
+                    <ImageBrush ImageSource="../img/11.png" Stretch="Uniform"/>
+                </Label.Background>
+            </Label>
+            <ed:Arc x:Name="btn_add_img" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Opacity="0.1" HorizontalAlignment="Left" Width="30" Margin="0,5,0,0" MouseLeftButtonDown="btn_add_img_MouseLeftButtonDown" Fill="#FFA2A2A2"/>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Height="30" Margin="0,0,21,30" VerticalAlignment="Bottom" Width="30">
+            <Label x:Name="label1" Content="?" Margin="-9,1,14,-6" FontSize="22" FontWeight="Bold" Foreground="LightGray"/>
+
+            <ed:Arc ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="Black" Stretch="None" Stroke="Black" Opacity="0.4" MouseLeftButtonDown="Arc_MouseLeftButtonDown" Margin="-14,7,14,-7"/>
+
+        </Grid>
+        <Label x:Name="label2_Copy5" Content="Icon" HorizontalAlignment="Left" Height="30" Margin="226,125,0,0" VerticalAlignment="Top" Width="54" Foreground="Gainsboro" FontWeight="Bold" FontSize="16" FontFamily="Verdana"/>
+        <Grid x:Name="grid_right" Margin="0,1,-316,-1" Width="300" Height="400" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment" Background="#FF1A1A1D">
+            <Label x:Name="label3" Content="Powered by" HorizontalAlignment="Left" Height="30" Margin="30,53,0,0" VerticalAlignment="Top" Width="96" Foreground="#FF7C7C7C" FontSize="14"/>
+            <Label x:Name="lbl_url" Content="https://alexandermateo.com" Height="35" Margin="30,0,28,178" VerticalAlignment="Bottom" Foreground="#FF7C7C7C" FontSize="18" HorizontalAlignment="Center" Width="242" MouseLeftButtonDown="lbl_url_MouseLeftButtonDown" />
+            <Label x:Name="lbl_icons_author" Content="Token (icons) by brsev" Height="36" Margin="78,0,63,44" VerticalAlignment="Bottom" Foreground="#FF616161" FontSize="15" HorizontalAlignment="Center" Width="159" RenderTransformOrigin="0.591,1.196"/>
+            <Label x:Name="label_Copy" Content="                                          " Margin="83,69,78,0" Opacity="0.6" Height="139" VerticalAlignment="Top">
+                <Label.Background>
+                    <ImageBrush ImageSource="../ico/logo.png" Stretch="Uniform"/>
+                </Label.Background>
+            </Label>
+            <Label x:Name="label5_Copy" Content="&lt;" Height="60" Margin="4.25,-7.597,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFCFCFE3" HorizontalAlignment="Left" Width="53"/>
+            <ed:Arc x:Name="btn_close_right" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="LightGray" Stretch="None" Stroke="Black" Opacity="0.5" HorizontalAlignment="Left" Width="30" Margin="9.165,11.002,0,0" Height="30" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" MouseLeftButtonDown="btn_close_right_MouseLeftButtonDown"/>
+            <ed:Arc x:Name="btn_link_web" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Stroke="Black" Opacity="0.5" HorizontalAlignment="Left" Width="30" Margin="111,285,0,0" Height="30" VerticalAlignment="Top" MouseLeftButtonUp="btn_link_web_MouseLeftButtonDown">
+                <ed:Arc.Fill>
+                    <ImageBrush Stretch="Uniform" ImageSource="../img/4.png"/>
+                </ed:Arc.Fill>
+            </ed:Arc>
+            <Label x:Name="lbl_info" Content="Task Manager" Height="39" Margin="71,0,100,112" VerticalAlignment="Bottom" Foreground="#FF9E9A9A" FontSize="18" HorizontalAlignment="Center" Width="129" FontWeight="Bold"/>
+            <Label x:Name="lbl_ver" Content="v 1.1" Height="39" Margin="196,0,64,109" VerticalAlignment="Bottom" Foreground="#FFB8B8B8" FontSize="15" HorizontalAlignment="Center" Width="40" RenderTransformOrigin="0.591,1.196"/>
+            <ed:Arc x:Name="btn_link_web_app" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Stretch="None" Stroke="Black" Opacity="0.5" HorizontalAlignment="Left" Width="30" Margin="161,286,0,0" Height="30" VerticalAlignment="Top" MouseLeftButtonUp="btn_link_web_app_MouseLeftButtonUp">
+                <ed:Arc.Fill>
+                    <ImageBrush Stretch="Uniform" ImageSource="../img/8.png"/>
+                </ed:Arc.Fill>
+            </ed:Arc>
+        </Grid>
+        <Grid x:Name="grid_left" Margin="-313.334,1,0,-1" Width="300" Height="400" Background="#FFD9D9EE" HorizontalAlignment="Left" Opacity="0.9">
+            <Label x:Name="label4" Content="My Activities" HorizontalAlignment="Center" Height="35" Margin="97,10.001,77.667,0" VerticalAlignment="Top" Width="125.333" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="label5" Content="&gt;" Height="60" Margin="6.667,-10.833,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FF272727" HorizontalAlignment="Left" Width="53"/>
+            <Button x:Name="btn_clean_list" Content="Clean list" Height="43" Margin="90,0,90,15" VerticalAlignment="Bottom" BorderThickness="2" BorderBrush="#FFD8D8D8" Background="#FFCFCFE3" Foreground="#FF575757" FontSize="16" PreviewMouseLeftButtonDown="btn_clean_list_PreviewMouseLeftButtonDown"/>
+            
+            <!-- REPORT ALL FORMS -->
+            <DataGrid x:Name="datagird_task" 
+                            RowHeight="25" ColumnWidth="*"                 
+                            ItemsSource="{Binding}"
+                            IsReadOnly="True"
+                            FontSize="12" 
+                                      AreRowDetailsFrozen="True"   
+                            FrozenColumnCount="0"  
+                                      CanUserReorderColumns="False"  
+                                      CanUserResizeColumns="False"
+                            CanUserSortColumns = "True"  
+                      
+                            HorizontalScrollBarVisibility="Auto"  
+                            VerticalScrollBarVisibility="Auto"  
+                            SelectionMode="Single" 
+                                  
+                                HorizontalGridLinesBrush="LightGray"
+                                VerticalGridLinesBrush="White"
+                                  
+                                Background="White" 
+                                RowBackground="#ffffff"
+                                AlternatingRowBackground="#f5f5f5" 
+                              
+
+                      Margin="20,50,20,70"
+                      
+                            CellStyle="{StaticResource CustomCellCenter}"
+                                    
+                            GridLinesVisibility="All"  
+                            HeadersVisibility="All"
+                                  
+                            CanUserAddRows="False"  
+                      VerticalContentAlignment="Center" 
+                      HorizontalContentAlignment="Center"
+                                  
+                            AutoGenerateColumns="False" 
+                      MouseLeftButtonUp="datagird_task_MouseLeftButtonUp" >
+
+                <DataGrid.ColumnHeaderStyle >
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#212226"  />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="MinHeight" Value="30" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns >
+
+                    <DataGridTextColumn Width="110" Header="Task" Binding="{Binding activity}" />
+                    <!--DataGridTextColumn Header="Date" Binding="{Binding date}" /-->
+                    <DataGridTextColumn Width="40" Header="Start" Binding="{Binding start}" />
+                    <DataGridTextColumn Width="40" Header="Finish" Binding="{Binding finish}" />
+                    <DataGridTemplateColumn Width="30">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Rectangle x:Name="button_data_finished" MouseLeftButtonDown="button_data_finished_MouseLeftButtonDown" HorizontalAlignment="Center" Stroke="Black" Width="30" Height="30" StrokeThickness="0" >
+                                    <Rectangle.Style>
+                                        <Style TargetType="{x:Type Rectangle}">
+                                            <Setter Property="Fill" Value="Transparent" />
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Fill">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="../img/done.png" Stretch="Fill" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Fill">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="../img/done_over.png" Stretch="Uniform" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Rectangle.Style>
+                                </Rectangle>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="30">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Rectangle x:Name="button_data_delete" MouseLeftButtonDown="button_data_delete_MouseLeftButtonDown" HorizontalAlignment="Center" Stroke="Black" Width="30" Height="30" StrokeThickness="0" >
+                                    <Rectangle.Style>
+                                        <Style TargetType="{x:Type Rectangle}">
+                                            <Setter Property="Fill" Value="Transparent" />
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Fill">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="../img/clear.png" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Fill">
+                                                        <Setter.Value>
+                                                            <ImageBrush ImageSource="../img/clear_over.png" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Rectangle.Style>
+                                </Rectangle>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <ed:Arc x:Name="btn_close_leftt" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="#FF1B1B1B" Stretch="None" Stroke="Black" Opacity="0.5" HorizontalAlignment="Left" Width="30" Margin="8.334,7.667,0,0" Height="30" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment" MouseLeftButtonDown="btn_close_leftt_MouseLeftButtonDown"/>
+        </Grid>
+        <Label x:Name="lbl_add_task" Content="Add" HorizontalAlignment="Left" Height="31" Margin="237,0,0,105" VerticalAlignment="Bottom" Width="54" Foreground="Gainsboro" FontWeight="Bold" FontSize="16" FontFamily="Verdana"/>
+        <Grid HorizontalAlignment="Right" Height="35" Margin="0,0,40.493,81" VerticalAlignment="Bottom" Width="30">
+            <ed:Arc x:Name="btn_add_" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="#FFB2B2B3" Stretch="None" Stroke="Black" HorizontalAlignment="Left" Width="30" Margin="5,9,-5,-4"/>
+            <Label x:Name="btn_ico_add" Content="+" Margin="1,-13,-15,-9" FontSize="40" Foreground="#FF1A1A1D" FontWeight="Bold" Opacity="0.98" Background="{x:Null}"/>
+            <ed:Arc x:Name="btn_add" ArcThickness="1" ArcThicknessUnit="Percent" EndAngle="360" Fill="#FFB2B2B3" Margin="6,9,-6,-4" Stretch="None" Stroke="Black" Height="30" Width="30" StrokeThickness="0" Opacity="0.02" PreviewMouseLeftButtonDown="btn_add_PreviewMouseLeftButtonDown_1"/>
+        </Grid>
+        <ComboBox x:Name="a_am" Width="45" Margin="104,0,0,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" SelectedIndex="0">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="#FF363636" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <ComboBox x:Name="b_am" Width="45" Margin="245,0,0,140" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" SelectedIndex="0"/>
+        <Label x:Name="label6" Content="My Activities" Height="33" Margin="94.506,0,120.589,20" VerticalAlignment="Bottom" FontSize="15" HorizontalAlignment="Center" Foreground="#FFB0B0B0" d:LayoutOverrides="LeftMargin, RightMargin"/>
+        <Rectangle x:Name="btn_llenar_tabla" Height="33" Margin="84,0,110,20" Stroke="#FFEBF509" VerticalAlignment="Bottom" RadiusX="3" RadiusY="3" StrokeThickness="2" Fill="#0C1A1A1D" MouseLeftButtonDown="btn_llenar_tabla_MouseLeftButtonDown"/>
+
+    </Grid>
+</Window>
